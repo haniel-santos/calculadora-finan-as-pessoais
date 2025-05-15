@@ -1,71 +1,124 @@
-📄 Projeto: #Calculadora de Finanças Pessoais
-Autor: Haniel Silva Santos
-Tecnologia: Java
-Paradigma: Programação Orientada a Objetos (POO)
+# Calculadora de Finanças Pessoais em Java
 
-#1. Objetivo do Projeto
-Este projeto tem como objetivo criar um software simples de controle financeiro pessoal, capaz de registrar receitas e despesas, calcular o saldo mensal e apresentar resumos por categoria de gastos.
-Ele foi desenvolvido em Java com Programação Orientada a Objetos (POO), visando a prática de conceitos como herança, abstração, encapsulamento e polimorfismo.
+[![Java](https://img.shields.io/badge/Java-17%2B-blue.svg)](https://www.oracle.com/java/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-#2. Funcionalidades
-✅ Adicionar receitas (com descrição, valor e categoria)
+Um sistema completo para gerenciamento financeiro pessoal desenvolvido em Java, aplicando os principais conceitos de Programação Orientada a Objetos (POO).
 
-✅ Adicionar despesas (com descrição, valor e categoria)
+## 📌 Índice
 
-✅ Calcular o saldo atual com base nas movimentações
+- [Funcionalidades](#-funcionalidades)
+- [Tecnologias e Conceitos](#-tecnologias-e-conceitos)
+- [Como Executar](#-como-executar)
+- [Exemplos de Uso](#-exemplos-de-uso)
+- [Roadmap](#-roadmap)
+- [Contribuição](#-contribuição)
+- [Licença](#-licença)
 
-✅ Listar todas as movimentações realizadas
+## ✨ Funcionalidades
 
-✅ Gerar um resumo agrupado por categoria
+✅ **Cadastro de transações**
+- Adição de receitas e despesas com descrição, valor e categoria
+- Validação de dados de entrada
 
-#3. Estrutura de Classes
-1. Movimento (classe abstrata):
+📊 **Relatórios financeiros**
+- Cálculo automático do saldo atual
+- Listagem completa de todas as movimentações
+- Resumo organizado por categorias
 
-Atributos: descricao, valor, categoria
+⚙️ **Gerenciamento**
+- Armazenamento em memória (ArrayList)
+- Interface via terminal intuitiva
 
-Método abstrato: getValor()
+## 🛠️ Tecnologias e Conceitos
 
-2. Receita (subclasse de Movimento):
+**Tecnologias utilizadas:**
+- Java 17+
+- Maven (para gerenciamento de dependências)
 
-Implementa getValor() retornando valor positivo
-
-3. Despesa (subclasse de Movimento):
-
-Implementa getValor() retornando valor negativo
-
-#4. GerenciadorFinanceiro:
-
-Lista de movimentos (ArrayList)
-
-Métodos para adicionar, calcular saldo, listar movimentos e resumir por categoria
-
-#5. Main:
-
-Classe de execução com menu no terminal para interação com o usuário
+**Princípios de POO aplicados:**
+| Conceito | Implementação |
+|----------|---------------|
+| **Herança** | `Receita` e `Despesa` herdam de `Movimento` |
+| **Polimorfismo** | Método `getValor()` com comportamentos diferentes |
+| **Encapsulamento** | Atributos privados com métodos acessores |
+| **Abstração** | Classe abstrata `Movimento` como modelo base |
 
 
-#6. Lógica de Funcionamento
-O usuário interage com o sistema por meio de um menu no terminal. Ele pode adicionar uma receita ou despesa informando os dados necessários.
-Todos os movimentos são armazenados em uma lista, e o sistema oferece opções para calcular o saldo total, listar os lançamentos e exibir resumos por categoria.
-As receitas somam valores positivos e as despesas subtraem do saldo total.
+## 🚀 Como Executar
 
-#7. Conceitos de POO Aplicados
-🧬 Herança: Receita e Despesa herdam de Movimento
+**Pré-requisitos:**
+- JDK 17+ instalado
+- Maven instalado (opcional)
 
-🧩 Abstração: Movimento é uma classe abstrata
+**Passos:**
+1. Clone o repositório:
+```bash
+git clone https://github.com/seu-usuario/calculadora-financas.git
+```
 
-🎭 Polimorfismo: o método getValor() se comporta de forma diferente em Receita e Despesa
+2. Navegue até o diretório do projeto:
+```bash
+cd calculadora-financas
+```
 
-🔒 Encapsulamento: os atributos são privados, acessados via métodos públicos
+3. Compile e execute:
+```bash
+javac src/main/java/*.java src/main/java/model/*.java src/main/java/service/*.java
+java -cp src/main/java Main
+```
 
-#8. Possíveis Expansões Futuras
-Suporte a datas (LocalDate)
+Ou usando Maven:
+```bash
+mvn compile exec:java -Dexec.mainClass="Main"
+```
 
-Exportar dados em .txt ou .csv
+## 💻 Exemplos de Uso
 
-Persistência com arquivos ou banco de dados
+1. **Adicionando uma receita:**
+```
+>>> Selecione uma opção:
+1 - Adicionar Receita
+2 - Adicionar Despesa
+3 - Ver Saldo
+4 - Listar Transações
+5 - Resumo por Categoria
 
-Interface gráfica com JavaFX
+Digite 1
 
-Versão web com Spring Boot
+Informe a descrição: Salário
+Informe o valor: 5000.00
+Informe a categoria: Renda Fixa
+```
 
+2. **Visualizando o saldo:**
+```
+Saldo atual: R$ 4,250.00
+(Receitas: R$ 5,000.00 | Despesas: R$ 750.00)
+```
+
+## 🗺️ Roadmap
+
+- [ ] Implementar persistência em arquivo
+- [ ] Adicionar suporte a datas nas transações
+- [ ] Criar interface gráfica com JavaFX
+- [ ] Desenvolver relatórios mensais
+- [ ] Adicionar exportação para CSV/PDF
+
+## 🤝 Contribuição
+
+Contribuições são bem-vindas! Siga estes passos:
+
+1. Faça um fork do projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/awesome-feature`)
+3. Commit suas mudanças (`git commit -m 'Add some awesome feature'`)
+4. Push para a branch (`git push origin feature/awesome-feature`)
+5. Abra um Pull Request
+
+## 📜 Licença
+
+Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
+
+---
+
+Feito com ❤️ por [haniel](https://github.com/haniel-santos)
